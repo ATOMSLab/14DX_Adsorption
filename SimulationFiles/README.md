@@ -1,0 +1,6 @@
+- All simulation files are examples only
+- They are short jobs and have all input files that are needed for each simulation systems
+- vlcc contains setup for VLE simulations
+- gcMC contains setup for gauge cell simulations at gauge cell box lenth sides of 287A
+- mixAds contains setup for mixture adsorption simulations for FER framework (all 4 zeolite unit cell sizes)
+- pureAds contains setup for pure adsorption of 1,4-dioxane into FER 

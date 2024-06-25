@@ -1,0 +1,111 @@
+&io
+    file_input      = 'fort.4'
+    file_restart    = 'fort.77'
+    file_struct     = '../input_struc.xyz'
+    file_run        = 'run1a.dat'
+    file_movie      = 'movie1a.dat'
+    io_output       =  2
+    run_num         = '1'
+    suffix          = 'a'
+    L_movie_xyz     =  T
+    L_movie_pdb     =  T
+
+ /
+ /
+
+ &system
+    lnpt         = T
+    lgibbs       = T
+    lgrand       = F
+    lanes        = F
+    lvirial      = F
+    lmipsw       = F
+    lexpee       = F
+    ldielect     = F
+    lpbc         = T
+    lpbcx        = T
+    lpbcy        = T
+    lpbcz        = T
+    lfold        = T
+    lijall       = F
+    lchgall      = F
+    lewald       = T
+    lcutcm       = T
+    ltailc       = T
+    lshift       = F
+    ldual        = T
+    L_Coul_CBMC  = T
+    lneigh       = F
+    lexzeo       = T
+    lslit        = F
+    lgraphite    = F
+    lsami        = F
+    lmuir        = F
+    lelect_field = F
+    lgaro        = F
+    lionic       = F
+    L_Ewald_Auto = T
+    lmixlb       = T
+    lmixjo       = F
+    L_spline     = F
+    L_linear     = F
+    L_vib_table  = F
+    L_bend_table = F
+    L_elect_table= F
+ /
+!
+ &zeolite_in
+    file_zeocoord           ='/home/s126/tjo_common/ztbFiles/FER-2_2u.cif'
+    dgr                     = 0.1d0
+    file_ztb                ='/home/s126/tjo_common/ztbFiles/FER-2.ztb'
+    requiredPrecision       = 0.01d0
+    num_points_interpolation= 5
+    upperLimit              = 1.0d5
+    ltailcZeo               = T
+    ltestztb                = F
+    lpore_volume            = F
+    volume_probe            = 124
+    volume_nsample          = 40000
+    lsurface_area           = F
+    area_probe              = 124
+    area_nsample            = 5000
+ /
+
+ATOMS
+!i type(i) epsi(i) sigi(i) q(i) mass(i) chemid(i) chname(i) [Angstrom, Kelvin, a.u.]; type 1: Lennard-Jones
+101 1   52.5     3.91     0.19   14.0266 C  #CH2 1,4-dioxane
+102 1   155.0    2.39    -0.38   15.9994 O  #O   1,4-dioxane
+ 
+114 1   78.0000  3.15400  0.0000  15.9990000 O   #TIP4P O water
+115 1    0.0000  0.00000  0.5200   1.0079000 H   #TIP4P H water
+116 1    0.0000  0.00000 -1.0400   0.0000000 M   #TIP4P M water
+
+
+177 1   22.0000  2.30000  1.5000  28.0855000 Si  #TraPPE-zeo Si
+178 1   53.0000  3.30000 -0.7500  15.9990000 O   #TraPPE-zeo O
+
+END ATOMS
+
+NONBOND
+!i j type(ij) epsi(ij) sigi(ij) [Angstrom, Kelvin, a.u.]; type 1: Lennard-Jones
+END NONBOND
+
+BONDS
+!i type(i) brvib(i) brvibk(i) [Angstrom]; type 1: U = brvibk * ( r_ij - brvib ) ^ 2
+1    1      1.54      0.0  #CH-CH
+2    1      1.41      0.0  #CH2-O linear UA
+
+18   1      0.95720   0.0  #H-O-H
+END BONDS
+
+ANGLES
+!i type(i) brben(i) brbenk(i) [degree]; type 1: U = brbenk * ( theta_ijk - brben ) ^ 2 [radian]
+1    1      112.00    25150.0
+2    1      112.00    30200.0
+END ANGLES
+
+DIHEDRALS
+!i type(i) vtt0(i) vtt1(i) vtt2(i) vtt3(i); !!!check vtorso.f, calctor.f!!!
+1  6        13537.0    -10876.0   5223.0    123.0  0.0 0.0 0.0 0.0 0.0 0.0 #O-(CH2)-(CH2)-O
+2  6        7037.0     -14958.0   7606.0   -1546.0 0.0 0.0 0.0 0.0 0.0 0.0 #CH2-(CH2)-(O)-CH2
+END DIHEDRALS
