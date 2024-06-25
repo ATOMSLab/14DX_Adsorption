@@ -1,0 +1,1820 @@
+Program started at 2024-06-25 14:44:05.034
+Number of processors: 1
+Threads per processor: 1
+
+MCCCS topmon (branch: master)
+Commit hash: 044cf19
+Build on host: taki-usr1
+Preprocessor definitions: __DOUBLE_PRECISION__;__USEOWN__
+Using Intel compiler: /usr/ebuild/software/iccifort/2020.4.304/compilers_and_libraries_2020.4.304/linux/bin/intel64/ifort
+
+ run_num: 1    
+ suffix: a
+ L_movie_xyz:  T
+ L_movie_pdb:  T
+
+***** PROGRAM  =  THE MAGIC BLACK BOX *****
+NPT Gibbs ensemble
+Using periodic boundaries in x y z
+3-dimensional periodic box
+Particle coordinates are folded into central box
+Additional center-of-mass cutoff on computed rcmu
+CBMC simultaneously grows all beads conected to the same bead
+   with bond lengths/angles generated from Gaussian distribution
+Program will call explct() for explicit-hydrogen models
+Dual Cutoff Configurational-bias Monte Carlo
+Coulombic interactions will be included in the Rosenbluth weights for CBMC growth
+Coulombic inter- and intra-molecular interactions will be calculated
+   using Ewald-sum techniques
+   with additional tail corrections
+Lorentz-Berthelot combining rules apply
+ L_spline:  F
+ L_linear:  F
+*******************************************
+
+NAMELIST MC_SHARED
+------------------------------------------
+Random number seed: 4
+number of boxes in the system: 3
+number of molecule types: 2
+number of chains: 1830
+number of cycles: 500
+ iratio: 10
+minimum cutoff (rmin):   1.200 [Ang]
+ softcut:   100.000000    
+Write checkpoint file every 1800 seconds, and keep the last 1 copies
+ linit:  F
+ lreadq:  F
+
+NAMELIST ANALYSIS
+------------------------------------------
+ iprint: 1000
+ imv: 1000
+ iblock: 1000
+ iratp: 5
+ idiele: 1000000000
+ iheatcapacity: 1000000000
+ ianalyze: 1000000000
+ nbin: 1
+ lrdf:  F
+ lintra:  F
+ lstretch:  F
+ lgvst:  F
+ lbend:  F
+ lete:  F
+ lrhoz:  F
+ bin_width:  0.200000000    
+ lucall:  F
+
+SECTION SIMULATION_BOX
+------------------------------------------
+Box 1:  287.000 x  287.000 x  287.000
+   rcut: 86.100 [Ang], kalp:  0.450
+   neighbor list cutoff (rcutnn):  0.000
+   number of dimensions that are isotropic: 3
+   lsolid:  F, lrect:  F, lideal:  T, ltwice:  F
+   temperature:  300.000 [K]
+   external pressure:  0.101325000     [MPa]
+   initial number of chains of each type:   2  0
+   Ghost particles: 0
+   initial number of chains in x, y and z directions: 2 x 2 x 4
+   initial rotational displacement: 0, inimix: 1, zshift:   0.0, dshift:  22.250
+Box 2:  160.000 x  160.000 x  160.000
+   rcut: 48.000 [Ang], kalp:  0.450
+   neighbor list cutoff (rcutnn):  0.000
+   number of dimensions that are isotropic: 3
+   lsolid:  F, lrect:  F, lideal:  T, ltwice:  F
+   temperature:  300.000 [K]
+   external pressure:  0.101325000     [MPa]
+   initial number of chains of each type:   0  2
+   Ghost particles: 0
+   initial number of chains in x, y and z directions: 2 x 2 x 4
+   initial rotational displacement: 0, inimix: 1, zshift:   0.0, dshift:  22.250
+Box 3:   40.000 x   40.000 x   40.000
+   rcut: 14.000 [Ang], kalp:  0.450
+   neighbor list cutoff (rcutnn):  0.000
+   number of dimensions that are isotropic: 3
+   lsolid:  F, lrect:  F, lideal:  F, ltwice:  F
+   temperature:  300.000 [K]
+   external pressure:  0.101325000     [MPa]
+   initial number of chains of each type:   28  1798
+   Ghost particles: 0
+   initial number of chains in x, y and z directions: 5 x 14 x 27
+   initial rotational displacement: 0, inimix: 1, zshift:   0.0, dshift:   2.790
+
+NUMBER OF MOLECULES OF EACH TYPE
+ number of chains of each type:   30  1800
+
+SECTION MOLECULE_TYPE
+------------------------------------------
+molecule type:  1 dioxane   
+   number of units: 6
+   number of units for CBMC growth: 6
+   number of carbons for EH alkane: 6
+   maximum number of units for CBMC: 6
+   maximum number of interior segments for SAFE-CBMC regrowth: 1
+   number of atoms in a ring (if lring=.true.): 6
+   iurot: 0, isolute: 100000, lelect:  T, lring:  F, lrigid:  T, lbranch:  T, lsetup:  F, lq14scale:  F, qscale: 0.0
+
+   bead 1: bead type 102 [O], charge leader 1
+      bonded to bead 2, type 2, bond length:  1.41000, k/2:   0.00000000    
+      bonded to bead 6, type 2, bond length:  1.41000, k/2:   0.00000000    
+      bending interaction through 6 with bead 5, bending type: 1, bending angle:  112.000, k/2:   25150.0000    
+      bending interaction through 2 with bead 3, bending type: 1, bending angle:  112.000, k/2:   25150.0000    
+      torsional interaction through 6 and 5 with bead 4, torsional type: 1
+      torsional interaction through 2 and 3 with bead 4, torsional type: 1
+
+   bead 2: bead type 101 [C], charge leader 2
+      bonded to bead 3, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bonded to bead 1, type 2, bond length:  1.41000, k/2:   0.00000000    
+      bending interaction through 3 with bead 4, bending type: 1, bending angle:  112.000, k/2:   25150.0000    
+      bending interaction through 1 with bead 6, bending type: 2, bending angle:  112.000, k/2:   30200.0000    
+      torsional interaction through 3 and 4 with bead 5, torsional type: 2
+      torsional interaction through 1 and 6 with bead 5, torsional type: 2
+
+   bead 3: bead type 101 [C], charge leader 3
+      bonded to bead 4, type 2, bond length:  1.41000, k/2:   0.00000000    
+      bonded to bead 2, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 4 with bead 5, bending type: 2, bending angle:  112.000, k/2:   30200.0000    
+      bending interaction through 2 with bead 1, bending type: 1, bending angle:  112.000, k/2:   25150.0000    
+      torsional interaction through 4 and 5 with bead 6, torsional type: 2
+      torsional interaction through 2 and 1 with bead 6, torsional type: 2
+
+   bead 4: bead type 102 [O], charge leader 4
+      bonded to bead 5, type 2, bond length:  1.41000, k/2:   0.00000000    
+      bonded to bead 3, type 2, bond length:  1.41000, k/2:   0.00000000    
+      bending interaction through 3 with bead 2, bending type: 1, bending angle:  112.000, k/2:   25150.0000    
+      bending interaction through 5 with bead 6, bending type: 1, bending angle:  112.000, k/2:   25150.0000    
+      torsional interaction through 3 and 2 with bead 1, torsional type: 1
+      torsional interaction through 5 and 6 with bead 1, torsional type: 1
+
+   bead 5: bead type 101 [C], charge leader 5
+      bonded to bead 6, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bonded to bead 4, type 2, bond length:  1.41000, k/2:   0.00000000    
+      bending interaction through 6 with bead 1, bending type: 1, bending angle:  112.000, k/2:   25150.0000    
+      bending interaction through 4 with bead 3, bending type: 2, bending angle:  112.000, k/2:   30200.0000    
+      torsional interaction through 6 and 1 with bead 2, torsional type: 2
+      torsional interaction through 4 and 3 with bead 2, torsional type: 2
+
+   bead 6: bead type 101 [C], charge leader 6
+      bonded to bead 1, type 2, bond length:  1.41000, k/2:   0.00000000    
+      bonded to bead 5, type 1, bond length:  1.54000, k/2:   0.00000000    
+      bending interaction through 1 with bead 2, bending type: 2, bending angle:  112.000, k/2:   30200.0000    
+      bending interaction through 5 with bead 4, bending type: 1, bending angle:  112.000, k/2:   25150.0000    
+      torsional interaction through 1 and 2 with bead 3, torsional type: 2
+      torsional interaction through 5 and 4 with bead 3, torsional type: 2
+molecule type:  2 water     
+   number of units: 4
+   number of units for CBMC growth: 4
+   number of carbons for EH alkane: 4
+   maximum number of units for CBMC: 4
+   maximum number of interior segments for SAFE-CBMC regrowth: 4
+   number of atoms in a ring (if lring=.true.): 4
+   iurot: 0, isolute: 100000, lelect:  T, lring:  F, lrigid:  T, lbranch:  T, lsetup:  F, lq14scale:  F, qscale: 0.0
+
+   bead 1: bead type 114 [O], charge leader 1
+
+   bead 2: bead type 115 [H], charge leader 2
+
+   bead 3: bead type 115 [H], charge leader 3
+
+   bead 4: bead type 116 [M], charge leader 4
+
+MOLECULAR MASS:      88.10520     18.01480
+
+SPECIAL INTERACTION RULES
+------------------------------------------
+  Total: 0 exclusion rules for intermolecular interactions
+
+
+SECTION UNIFORM_BIASING_POTENTIALS
+------------------------------------------
+Molecule type, biasing potential 1 through nbox [K]: 
+     0.000     0.000     0.000
+     0.000     0.000     0.000
+
+SECTION SPECIFIC_ATOM_TRANSL
+------------------------------------------
+
+Molecule type: 1
+
+LJ INCLUSION TABLE
+       1   2   3   4   5   6
+   1   F   F   F   F   F   F
+   2   F   F   F   F   F   F
+   3   F   F   F   F   F   F
+   4   F   F   F   F   F   F
+   5   F   F   F   F   F   F
+   6   F   F   F   F   F   F
+
+CHARGE INCLUSION TABLE
+       1   2   3   4   5   6
+   1   F   F   F   F   F   F
+   2   F   F   F   F   F   F
+   3   F   F   F   F   F   F
+   4   F   F   F   F   F   F
+   5   F   F   F   F   F   F
+   6   F   F   F   F   F   F
+
+1-4 LJ SCALING FACTORS
+             1      2      3      4      5      6
+      1  1.000  1.000  1.000  1.000  1.000  1.000
+      2  1.000  1.000  1.000  1.000  1.000  1.000
+      3  1.000  1.000  1.000  1.000  1.000  1.000
+      4  1.000  1.000  1.000  1.000  1.000  1.000
+      5  1.000  1.000  1.000  1.000  1.000  1.000
+      6  1.000  1.000  1.000  1.000  1.000  1.000
+
+1-4 CHARGE SCALING FACTORS
+             1      2      3      4      5      6
+      1  1.000  1.000  1.000  1.000  1.000  1.000
+      2  1.000  1.000  1.000  1.000  1.000  1.000
+      3  1.000  1.000  1.000  1.000  1.000  1.000
+      4  1.000  1.000  1.000  1.000  1.000  1.000
+      5  1.000  1.000  1.000  1.000  1.000  1.000
+      6  1.000  1.000  1.000  1.000  1.000  1.000
+
+Molecule type: 2
+
+LJ INCLUSION TABLE
+       1   2   3   4
+   1   F   F   F   F
+   2   F   F   F   F
+   3   F   F   F   F
+   4   F   F   F   F
+
+CHARGE INCLUSION TABLE
+       1   2   3   4
+   1   F   F   F   F
+   2   F   F   F   F
+   3   F   F   F   F
+   4   F   F   F   F
+
+1-4 LJ SCALING FACTORS
+             1      2      3      4
+      1  1.000  1.000  1.000  1.000
+      2  1.000  1.000  1.000  1.000
+      3  1.000  1.000  1.000  1.000
+      4  1.000  1.000  1.000  1.000
+
+1-4 CHARGE SCALING FACTORS
+             1      2      3      4
+      1  1.000  1.000  1.000  1.000
+      2  1.000  1.000  1.000  1.000
+      3  1.000  1.000  1.000  1.000
+      4  1.000  1.000  1.000  1.000
+
+PAIRWISE LJ AND COULOMB INTERACTIONS
+    i    j         q0(i)         q0(j)     vvdW_1     vvdW_2 ...
+  101  101      0.190000      0.190000   210.00       3.9100    
+  101  102      0.190000     -0.380000   360.83       3.1500    
+  101  114      0.190000      0.000000   255.97       3.5320    
+  101  115      0.190000      0.520000   0.0000       0.0000    
+  101  116      0.190000     -1.040000   0.0000       0.0000    
+  102  101     -0.380000      0.190000   360.83       3.1500    
+  102  102     -0.380000     -0.380000   620.00       2.3900    
+  102  114     -0.380000      0.000000   439.82       2.7720    
+  102  115     -0.380000      0.520000   0.0000       0.0000    
+  102  116     -0.380000     -1.040000   0.0000       0.0000    
+  114  101      0.000000      0.190000   255.97       3.5320    
+  114  102      0.000000     -0.380000   439.82       2.7720    
+  114  114      0.000000      0.000000   312.00       3.1540    
+  114  115      0.000000      0.520000   0.0000       0.0000    
+  114  116      0.000000     -1.040000   0.0000       0.0000    
+  115  101      0.520000      0.190000   0.0000       0.0000    
+  115  102      0.520000     -0.380000   0.0000       0.0000    
+  115  114      0.520000      0.000000   0.0000       0.0000    
+  115  115      0.520000      0.520000   0.0000       0.0000    
+  115  116      0.520000     -1.040000   0.0000       0.0000    
+  116  101     -1.040000      0.190000   0.0000       0.0000    
+  116  102     -1.040000     -0.380000   0.0000       0.0000    
+  116  114     -1.040000      0.000000   0.0000       0.0000    
+  116  115     -1.040000      0.520000   0.0000       0.0000    
+  116  116     -1.040000     -1.040000   0.0000       0.0000    
+
+NAMELIST TRANSFER
+------------------------------------------
+lopt_bias:  F F
+freq_opt_bias: 500
+
+NAMELIST MC_VOLUME
+------------------------------------------
+target volume acceptance ratio (tavol): 0.40
+frequency to adjust maximum volume displacement: 200
+initial maximum volume displacement (rmvol): 1000.000
+pmvol:  0.100000000E-02
+   pmvlmt for box 1:   0.00000000    
+   pmvlmt for box 2:   0.00000000    
+   pmvlmt for box 3:   1.00000000    
+nvolb: 3
+cutoff will be addressed with option:  -1
+   box pair 1: between 1 and 2,   pmvolb =  0.333333333    
+   box pair 2: between 1 and 3,   pmvolb =  0.666666667    
+   box pair 3: between 2 and 3,   pmvolb =   1.00000000    
+
+NAMELIST MC_SWATCH
+------------------------------------------
+pmswat:   0.00000000    
+   number of swatch pairs (nswaty): 1
+   probability of each swatch pair:   0.00000000    
+
+   swatch molecule type pairs:    2    3
+   nsampos: 4, ncut:  1  1, ncutsafe:  0  0
+   molecule 1
+   ncut 1: grow from 3, prev 4
+   molecule 2
+   ncut 1: grow from 1, prev 2
+   splist:    3    1
+   splist:    4    2
+   splist:    5    3
+   splist:    6    4
+   number of swatch box pairs: 1
+   probability of the swatch box pair:   1.00000000    
+   box pair:    2    3
+
+NAMELIST MC_SWAP
+------------------------------------------
+pmswap:  0.400000000    
+   swap probability for molecule type 1 (pmswmt):   0.9000
+   swap probability for molecule type 2 (pmswmt):   1.0000
+   number of swap box pairs for molecule type 1: 1
+   pmswapb:   1.00000000    
+   box pair:    1    3
+   number of swap box pairs for molecule type 2: 1
+   pmswapb:   1.00000000    
+   box pair:    2    3
+
+NAMELIST MC_CBMC
+------------------------------------------
+CBMC inner cutoff (rcutin):  5.000 [Ang]
+AVBMC outer cutoff (rbsmax):  3.500 [Ang], inner cutoff (rbsmin):  2.500 [Ang]
+lpresim:  F
+iupdatefix: 100000000
+pmcb:  0.601000000    
+
+molecule type: nchoi1  nchoi nchoir nchoih nchtor nchbna nchbnb icbdir icbsta first_bead_to_swap
+            1:     32     16     16      1    100   1000   1000      0      0      1
+            2:     32     16     16      1    100   1000   1000      0      0      1
+
+molecule type:    pmcbmt         pmall  avbmc_version    pmbias        pmbsmt       pmbias2         pmfix   lrig
+            1:   1.00000       0.00000              0   0.00000       0.00000       0.00000       1.00000      F
+            2:   0.00000       0.00000              0   0.00000       0.00000       0.00000       0.00000      F
+
+NAMELIST MC_FLUCQ
+------------------------------------------
+target fluctuating charge acceptance ratio (taflcq): 0.95
+fluctuating charge temperature:    5.000 [K]
+initial maximum displacement for fluctuating charge moves:  0.100000000    
+pmflcq:   0.00000000    
+   nchoiq for each box:   1  1  1
+nswapq: 0
+
+molecule type:  lflucq lqtrans   pmfqmt            fqegp
+            1:       F       F   0.5000           0.0000
+            2:       F       F   1.0000           0.0000
+
+NAMELIST MC_EE
+------------------------------------------
+pmexpc:   0.00000000    
+   expanded ens. prob. for molecule type 1 (pmeemt):   0.0000, lexpand:  F
+   expanded ens. prob. for molecule type 2 (pmeemt):   1.0000, lexpand:  F
+pmexpc1:   0.00000000    
+
+NAMELIST MC_SIMPLE
+------------------------------------------
+pm_atom_tra:  0.100000000E-03
+initial maximum displacement for atom translation:  0.100000000E-01
+target translation acceptance ratio: 0.50
+initial maximum displacement for molecule translation:  0.300000000    
+pmtra:  0.801000000    
+   translation probability for molecule type 1 (pmtrmt):   0.5000
+   translation probability for molecule type 2 (pmtrmt):   1.0000
+target rotation acceptance ratio: 0.50
+initial maximum displacement for molecule rotation:  0.400000000    
+pmrot:   1.00000000    
+   rotational probability for molecule type 1 (pmromt):   0.5000
+   rotational probability for molecule type 2 (pmromt):   1.0000
+
+percentage move probabilities:
+ volume move       :    0.10 %
+ swatch move       :    0.00 %
+ swap move         :   39.90 %
+ CBMC move         :   20.10 %
+ fluct. charge move:    0.00 %
+ expanded ens. move:    0.00 %
+ new EE move       :    0.00 %
+ atom trans. move  :    0.00 %
+ translation move  :   20.00 %
+ rotation move     :   19.90 %
+
+NAMELIST EXTERNAL_FIELD
+------------------------------------------
+Steele 10-4-3 slit pore
+On both sides of the simulation box (z = 0 & z = boxlz)
+Surface material bead type: 190
+Surface atom density:  0.11400 [Ang^-3]
+Surface layer spacing:  3.40000 [Ang]
+a1:  2.46000 [Ang]
+Electric field in z direction:     0.00000000         0.00000000         0.00000000     [V/A]
+
+READING CONFIGURATION FROM RESTART FILE
+------------------------------------------
+new maximum displacements read from restart-file
+   max atom trans. displacement:     0.010000    0.010000    0.010000
+   max volume displacement:   0.1000E+04  0.1000E+04  0.1000E+04
+
+box      #1
+   molecule type 1
+      max trans. displacement:   172.200000 172.200000 172.200000
+      max rot. displacement:       3.141500   3.141500   3.141500
+      max fluc. q displacement:    0.100000
+   molecule type 2
+      max trans. displacement:     0.300000   0.300000   0.300000
+      max rot. displacement:       0.400000   0.400000   0.400000
+      max fluc. q displacement:    0.100000
+
+box      #2
+   molecule type 1
+      max trans. displacement:     0.300000   0.300000   0.300000
+      max rot. displacement:       0.400000   0.400000   0.400000
+      max fluc. q displacement:    0.100000
+   molecule type 2
+      max trans. displacement:    96.000000  96.000000  96.000000
+      max rot. displacement:       3.141500   3.141500   3.141500
+      max fluc. q displacement:    0.100000
+
+box      #3
+   molecule type 1
+      max trans. displacement:     0.235922   0.235922   0.235922
+      max rot. displacement:       0.226094   0.226094   0.226094
+      max fluc. q displacement:    0.100000
+   molecule type 2
+      max trans. displacement:     0.466700   0.466700   0.466700
+      max rot. displacement:       0.560975   0.560975   0.560975
+      max fluc. q displacement:    0.100000
+
+reading new box size from restart-file
+ dimension box 1: a =   287.000000  b =   287.000000  c =   287.000000 rcut =   86.100000
+ dimension box 2: a =   160.000000  b =   160.000000  c =   160.000000 rcut =   48.000000
+ dimension box 3: a =    40.173293  b =    40.173293  c =    40.173293 rcut =   14.000000
+
+Finished writing simulation box related info
+
+****Ewald Parameters*****
+ibox:      calp  kmaxl  kmaxm  kmaxn         rcut
+   1:     0.037     11     11     11      86.1000
+   2:     0.067     11     11     11      48.0000
+   3:     0.229     10     10     10      14.0000
+ 
+ sumup control
+ number of chains           2
+number of chains of type    1 dioxane          2
+number of chains of type    2 water            0
+ inter lj energy   0.000000000000000E+000
+ intra lj energy   0.000000000000000E+000
+ Tail correction   0.000000000000000E+000
+ bond vibration    0.000000000000000E+000
+ bond bending       1359.75252101933     
+ torsional          694.975179371819     
+ external          0.000000000000000E+000
+ coulombic energy  0.000000000000000E+000
+ fluc Q energy     0.000000000000000E+000
+ well energy       0.000000000000000E+000
+ total energy       2054.72770039115     
+ 
+ box             1  initial v   =    2054.72770039115     
+ surf. tension :   box 1 =       0.00000
+ pressure check:   box 1 =          0.35
+ compress factor:  box 1 =       1.00000
+ 
+ sumup control
+ number of chains           2
+number of chains of type    1 dioxane          0
+number of chains of type    2 water            2
+ inter lj energy   0.000000000000000E+000
+ intra lj energy   0.000000000000000E+000
+ Tail correction   0.000000000000000E+000
+ bond vibration    0.000000000000000E+000
+ bond bending      0.000000000000000E+000
+ torsional         0.000000000000000E+000
+ external          0.000000000000000E+000
+ coulombic energy  0.000000000000000E+000
+ fluc Q energy     0.000000000000000E+000
+ well energy       0.000000000000000E+000
+ total energy      0.000000000000000E+000
+ 
+ box             2  initial v   =   0.000000000000000E+000
+ surf. tension :   box 2 =       0.00000
+ pressure check:   box 2 =          2.02
+ compress factor:  box 2 =       1.00000
+ 
+ sumup control
+ number of chains        1826
+number of chains of type    1 dioxane         28
+number of chains of type    2 water         1798
+ inter lj energy    609818.128627306     
+ intra lj energy   0.000000000000000E+000
+ Tail correction   -14684.3315910868     
+ bond vibration    0.000000000000000E+000
+ bond bending       21951.5130948083     
+ torsional          25450.8740597210     
+ external          0.000000000000000E+000
+ coulombic energy  -7296814.68253161     
+ fluc Q energy     0.000000000000000E+000
+ well energy       0.000000000000000E+000
+ total energy      -6639594.16674977     
+ 
+ box             3  initial v   =   -6639594.16674977     
+ surf. tension :   box 3 =     587.86192
+ pressure check:   box 3 =         52.75
+ compress factor:  box 3 =       0.00045
+ 
+ +++++ start of markov chain +++++
+ 
+ Cycle   Total   Energy    Boxlength    Pressure     Compress    Molecules
+ Box            1
+ Type  1 bn    161.    167.    199.    168.    159.    184.
+         bs    161.    167.    199.    168.    159.    184.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      2.      0.      0.      0.      2.
+         bs      1.      2.      0.      0.      0.      2.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    423.    419.    434.    421.    420.    455.
+         bs    244.    218.    216.    232.    206.    243.
+ max.displ.       0.2508      0.2508      0.2508      0.2375      0.2375      0.2375
+ Type  2 bn    584.    632.    655.    621.    613.    606.
+         bs    317.    289.    320.    302.    308.    302.
+ max.displ.       0.4632      0.4632      0.4632      0.5562      0.5562      0.5562
+ Box            1
+ Type  1 bn    202.    228.    212.    205.    209.    208.
+         bs    202.    228.    212.    205.    209.    208.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      0.      3.      1.      0.      0.
+         bs      0.      0.      3.      1.      0.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    423.    393.    421.    371.    400.    382.
+         bs    220.    188.    189.    189.    192.    193.
+ max.displ.       0.2420      0.2420      0.2420      0.2366      0.2366      0.2366
+ Type  2 bn    608.    605.    612.    540.    612.    579.
+         bs    348.    300.    262.    263.    314.    271.
+ max.displ.       0.4620      0.4620      0.4620      0.5443      0.5443      0.5443
+ Box            1
+ Type  1 bn    292.    286.    286.    258.    265.    258.
+         bs    292.    286.    286.    258.    265.    258.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      2.      0.      0.      3.      1.
+         bs      2.      2.      0.      0.      3.      1.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    329.    316.    332.    308.    312.    314.
+         bs    184.    161.    161.    157.    184.    168.
+ max.displ.       0.2507      0.2507      0.2507      0.2579      0.2579      0.2579
+ Type  2 bn    593.    615.    635.    628.    602.    588.
+         bs    315.    315.    269.    298.    293.    290.
+ max.displ.       0.4519      0.4519      0.4519      0.5278      0.5278      0.5278
+ Box            1
+ Type  1 bn    288.    299.    286.    302.    302.    295.
+         bs    288.    299.    286.    302.    302.    295.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      1.      4.      2.      1.      4.
+         bs      2.      1.      4.      2.      1.      4.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    293.    299.    317.    322.    314.    302.
+         bs    166.    163.    138.    160.    155.    149.
+ max.displ.       0.2586      0.2586      0.2586      0.2551      0.2551      0.2551
+ Type  2 bn    600.    562.    636.    619.    640.    596.
+         bs    319.    275.    290.    322.    340.    312.
+ max.displ.       0.4449      0.4449      0.4449      0.5542      0.5542      0.5542
+ Box            1
+ Type  1 bn    310.    328.    322.    287.    291.    307.
+         bs    310.    328.    322.    287.    291.    307.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      1.      4.      3.      2.      3.
+         bs      2.      1.      4.      3.      2.      3.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    299.    271.    314.    275.    293.    288.
+         bs    166.    145.    168.    142.    145.    140.
+ max.displ.       0.2802      0.2802      0.2802      0.2547      0.2547      0.2547
+ Type  2 bn    594.    644.    634.    610.    636.    572.
+         bs    313.    311.    295.    303.    304.    278.
+ max.displ.       0.4376      0.4376      0.4376      0.5397      0.5397      0.5397
+ Box            1
+ Type  1 bn    331.    313.    293.    283.    272.    335.
+         bs    331.    313.    293.    283.    272.    335.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      0.      0.      0.      5.      3.
+         bs      2.      0.      0.      0.      5.      3.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    293.    305.    314.    305.    277.    287.
+         bs    164.    144.    145.    161.    128.    138.
+ max.displ.       0.2790      0.2790      0.2790      0.2497      0.2497      0.2497
+ Type  2 bn    614.    624.    621.    591.    616.    627.
+         bs    351.    300.    281.    278.    292.    324.
+ max.displ.       0.4390      0.4390      0.4390      0.5257      0.5257      0.5257
+ Box            1
+ Type  1 bn    280.    311.    300.    288.    275.    303.
+         bs    280.    311.    300.    288.    275.    303.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      3.      0.      0.      1.      2.
+         bs      0.      3.      0.      0.      1.      2.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    328.    305.    324.    321.    297.    263.
+         bs    192.    155.    150.    170.    157.    138.
+ max.displ.       0.2895      0.2895      0.2895      0.2635      0.2635      0.2635
+ Type  2 bn    594.    603.    601.    659.    633.    588.
+         bs    333.    270.    267.    305.    318.    299.
+ max.displ.       0.4251      0.4251      0.4251      0.5165      0.5165      0.5165
+ Box            1
+ Type  1 bn    295.    310.    314.    278.    309.    344.
+         bs    295.    310.    314.    278.    309.    344.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      2.      0.      4.      0.      1.
+         bs      1.      2.      0.      4.      0.      1.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    311.    293.    294.    290.    333.    287.
+         bs    175.    158.    133.    153.    176.    155.
+ max.displ.       0.3000      0.3000      0.3000      0.2804      0.2804      0.2804
+ Type  2 bn    626.    586.    598.    658.    599.    652.
+         bs    329.    279.    275.    308.    287.    313.
+ max.displ.       0.4142      0.4142      0.4142      0.4914      0.4914      0.4914
+ Box            1
+ Type  1 bn    312.    293.    331.    337.    302.    291.
+         bs    312.    293.    331.    337.    302.    291.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      1.      2.      1.      0.      1.
+         bs      1.      1.      2.      1.      0.      1.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    289.    325.    305.    322.    302.    314.
+         bs    153.    161.    144.    144.    138.    180.
+ max.displ.       0.2994      0.2994      0.2994      0.2762      0.2762      0.2762
+ Type  2 bn    631.    644.    592.    591.    600.    576.
+         bs    344.    315.    283.    299.    314.    283.
+ max.displ.       0.4176      0.4176      0.4176      0.4982      0.4982      0.4982
+ Box            1
+ Type  1 bn    322.    286.    304.    291.    326.    321.
+         bs    322.    286.    304.    291.    326.    321.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      0.      1.      0.      2.      0.
+         bs      2.      0.      1.      0.      2.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    313.    312.    314.    304.    307.    289.
+         bs    175.    153.    140.    161.    163.    157.
+ max.displ.       0.2984      0.2984      0.2984      0.2953      0.2953      0.2953
+ Type  2 bn    584.    590.    631.    589.    639.    586.
+         bs    298.    275.    271.    295.    354.    315.
+ max.displ.       0.3914      0.3914      0.3914      0.5289      0.5289      0.5289
+ Box            1
+ Type  1 bn    291.    320.    284.    291.    304.    295.
+         bs    291.    320.    284.    291.    304.    295.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      3.      1.      0.      1.      0.
+         bs      1.      3.      1.      0.      1.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    311.    306.    299.    321.    309.    318.
+         bs    166.    168.    138.    158.    139.    173.
+ max.displ.       0.3072      0.3072      0.3072      0.2925      0.2925      0.2925
+ Type  2 bn    591.    610.    638.    596.    607.    604.
+         bs    311.    328.    330.    273.    283.    298.
+ max.displ.       0.4126      0.4126      0.4126      0.4998      0.4998      0.4998
+ Box            1
+ Type  1 bn    298.    294.    323.    276.    339.    297.
+         bs    298.    294.    323.    276.    339.    297.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      4.      3.      1.      3.      2.
+         bs      2.      4.      3.      1.      3.      2.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    290.    311.    290.    273.    322.    302.
+         bs    161.    152.    127.    116.    158.    157.
+ max.displ.       0.3035      0.3035      0.3035      0.2800      0.2800      0.2800
+ Type  2 bn    617.    599.    634.    601.    590.    565.
+         bs    355.    297.    302.    281.    311.    285.
+ max.displ.       0.4257      0.4257      0.4257      0.4995      0.4995      0.4995
+ Box            1
+ Type  1 bn    296.    293.    327.    304.    292.    283.
+         bs    296.    293.    327.    304.    292.    283.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      0.      1.      1.      1.      3.
+         bs      0.      0.      1.      1.      1.      3.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    304.    319.    280.    310.    298.    293.
+         bs    154.    145.    123.    157.    136.    144.
+ max.displ.       0.2834      0.2834      0.2834      0.2714      0.2714      0.2714
+ Type  2 bn    638.    616.    586.    584.    590.    580.
+         bs    331.    300.    269.    280.    321.    283.
+ max.displ.       0.4157      0.4157      0.4157      0.5033      0.5033      0.5033
+ Box            1
+ Type  1 bn    284.    318.    293.    289.    294.    309.
+         bs    284.    318.    293.    289.    294.    309.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      0.      2.      1.      0.      0.
+         bs      0.      0.      2.      1.      0.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    333.    305.    308.    285.    332.    301.
+         bs    201.    147.    145.    163.    168.    155.
+ max.displ.       0.2940      0.2940      0.2940      0.2882      0.2882      0.2882
+ Type  2 bn    577.    595.    638.    607.    584.    564.
+         bs    297.    290.    298.    289.    291.    287.
+ max.displ.       0.4072      0.4072      0.4072      0.4977      0.4977      0.4977
+ Box            1
+ Type  1 bn    305.    331.    334.    324.    322.    303.
+         bs    305.    331.    334.    324.    322.    303.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      3.      1.      2.      0.      2.
+         bs      2.      3.      1.      2.      0.      2.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    287.    285.    290.    292.    285.    291.
+         bs    154.    144.    141.    137.    133.    134.
+ max.displ.       0.2995      0.2995      0.2995      0.2683      0.2683      0.2683
+ Type  2 bn    592.    601.    624.    607.    621.    596.
+         bs    319.    297.    267.    311.    316.    297.
+ max.displ.       0.3966      0.3966      0.3966      0.5042      0.5042      0.5042
+ Box            1
+ Type  1 bn    324.    286.    297.    321.    319.    332.
+         bs    324.    286.    297.    321.    319.    332.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      1.      0.      1.      0.      0.
+         bs      2.      1.      0.      1.      0.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    292.    282.    287.    270.    284.    284.
+         bs    155.    138.    136.    132.    131.    148.
+ max.displ.       0.2983      0.2983      0.2983      0.2632      0.2632      0.2632
+ Type  2 bn    568.    601.    586.    619.    611.    588.
+         bs    309.    306.    260.    305.    316.    309.
+ max.displ.       0.3957      0.3957      0.3957      0.5161      0.5161      0.5161
+ Box            1
+ Type  1 bn    339.    282.    308.    303.    265.    281.
+         bs    339.    282.    308.    303.    265.    281.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      1.      1.      1.      1.      1.
+         bs      2.      1.      1.      1.      1.      1.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    294.    318.    310.    287.    299.    283.
+         bs    181.    150.    140.    165.    140.    147.
+ max.displ.       0.3061      0.3061      0.3061      0.2742      0.2742      0.2742
+ Type  2 bn    603.    647.    645.    655.    608.    601.
+         bs    336.    308.    326.    306.    306.    307.
+ max.displ.       0.4059      0.4059      0.4059      0.5097      0.5097      0.5097
+ Box            1
+ Type  1 bn    272.    336.    316.    337.    303.    288.
+         bs    272.    336.    316.    337.    303.    288.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      1.      2.      4.      4.      3.
+         bs      0.      1.      2.      4.      4.      3.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    317.    322.    332.    324.    294.    328.
+         bs    164.    150.    168.    184.    147.    172.
+ max.displ.       0.3039      0.3039      0.3039      0.2910      0.2910      0.2910
+ Type  2 bn    632.    616.    611.    584.    584.    608.
+         bs    338.    313.    307.    270.    293.    285.
+ max.displ.       0.4182      0.4182      0.4182      0.4868      0.4868      0.4868
+ Box            1
+ Type  1 bn    304.    304.    302.    295.    301.    320.
+         bs    304.    304.    302.    295.    301.    320.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      7.      2.      1.      4.      1.      0.
+         bs      7.      2.      1.      4.      1.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    277.    295.    318.    316.    280.    315.
+         bs    153.    145.    148.    153.    126.    168.
+ max.displ.       0.3058      0.3058      0.3058      0.2847      0.2847      0.2847
+ Type  2 bn    608.    606.    574.    611.    614.    611.
+         bs    303.    291.    267.    315.    326.    312.
+ max.displ.       0.4025      0.4025      0.4025      0.5054      0.5054      0.5054
+ Box            1
+ Type  1 bn    317.    309.    297.    339.    287.    287.
+         bs    317.    309.    297.    339.    287.    287.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      0.      1.      1.      1.      7.
+         bs      1.      0.      1.      1.      1.      7.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    285.    264.    308.    297.    313.    311.
+         bs    147.    148.    156.    131.    166.    165.
+ max.displ.       0.3227      0.3227      0.3227      0.2851      0.2851      0.2851
+ Type  2 bn    633.    618.    597.    589.    602.    625.
+         bs    331.    326.    289.    283.    290.    314.
+ max.displ.       0.4118      0.4118      0.4118      0.4935      0.4935      0.4935
+ volume change:  bn =     0.0   bs =     0.0   max.displ. = 0.10000E+04
+ volume change:  bn =     0.0   bs =     0.0   max.displ. = 0.10000E+04
+ volume change:  bn =   347.0   bs =    91.0   max.displ. = 0.65562E+03
+ Box            1
+ Type  1 bn    331.    316.    334.    314.    242.    326.
+         bs    331.    316.    334.    314.    242.    326.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      3.      4.      1.      4.      4.      1.
+         bs      3.      4.      1.      4.      4.      1.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    271.    309.    308.    288.    306.    327.
+         bs    149.    138.    149.    136.    148.    167.
+ max.displ.       0.3184      0.3184      0.3184      0.2787      0.2787      0.2787
+ Type  2 bn    617.    598.    612.    587.    573.    591.
+         bs    319.    263.    270.    278.    279.    291.
+ max.displ.       0.3838      0.3838      0.3838      0.4780      0.4780      0.4780
+ Box            1
+ Type  1 bn    335.    313.    330.    299.    344.    312.
+         bs    335.    313.    330.    299.    344.    312.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      0.      0.      1.      4.      0.
+         bs      1.      0.      0.      1.      4.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    281.    330.    295.    287.    299.    292.
+         bs    152.    172.    134.    149.    153.    146.
+ max.displ.       0.3219      0.3219      0.3219      0.2845      0.2845      0.2845
+ Type  2 bn    629.    595.    599.    615.    627.    576.
+         bs    349.    309.    281.    318.    308.    309.
+ max.displ.       0.3949      0.3949      0.3949      0.4922      0.4922      0.4922
+ Box            1
+ Type  1 bn    278.    306.    316.    300.    333.    317.
+         bs    278.    306.    316.    300.    333.    317.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      5.      1.      1.      3.      1.      5.
+         bs      5.      1.      1.      3.      1.      5.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    322.    311.    345.    277.    303.    337.
+         bs    181.    156.    159.    133.    156.    156.
+ max.displ.       0.3271      0.3271      0.3271      0.2765      0.2765      0.2765
+ Type  2 bn    586.    598.    639.    639.    624.    623.
+         bs    331.    282.    301.    294.    307.    302.
+ max.displ.       0.3968      0.3968      0.3968      0.4715      0.4715      0.4715
+ Box            1
+ Type  1 bn    330.    278.    275.    299.    308.    313.
+         bs    330.    278.    275.    299.    308.    313.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      1.      1.      1.      1.      5.
+         bs      1.      1.      1.      1.      1.      5.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    289.    282.    303.    293.    291.    295.
+         bs    153.    152.    138.    150.    132.    146.
+ max.displ.       0.3323      0.3323      0.3323      0.2692      0.2692      0.2692
+ Type  2 bn    614.    569.    570.    624.    556.    598.
+         bs    327.    284.    270.    317.    302.    305.
+ max.displ.       0.3983      0.3983      0.3983      0.4907      0.4907      0.4907
+ Box            1
+ Type  1 bn    287.    336.    305.    316.    309.    302.
+         bs    287.    336.    305.    316.    309.    302.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      3.      2.      1.      3.      1.      1.
+         bs      3.      2.      1.      3.      1.      1.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    274.    266.    303.    302.    275.    288.
+         bs    138.    140.    132.    158.    145.    140.
+ max.displ.       0.3247      0.3247      0.3247      0.2758      0.2758      0.2758
+ Type  2 bn    568.    643.    601.    672.    606.    604.
+         bs    303.    315.    288.    321.    316.    301.
+ max.displ.       0.3989      0.3989      0.3989      0.4899      0.4899      0.4899
+ Box            1
+ Type  1 bn    331.    308.    266.    304.    320.    311.
+         bs    331.    308.    266.    304.    320.    311.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      1.      1.      1.      3.      2.
+         bs      1.      1.      1.      1.      3.      2.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    260.    311.    312.    296.    300.    310.
+         bs    117.    158.    142.    154.    153.    154.
+ max.displ.       0.3059      0.3059      0.3059      0.2807      0.2807      0.2807
+ Type  2 bn    613.    628.    624.    629.    587.    665.
+         bs    324.    292.    284.    315.    296.    335.
+ max.displ.       0.3853      0.3853      0.3853      0.4928      0.4928      0.4928
+ Box            1
+ Type  1 bn    295.    321.    276.    318.    283.    303.
+         bs    295.    321.    276.    318.    283.    303.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      2.      0.      2.      2.      0.
+         bs      0.      2.      0.      2.      2.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    319.    296.    285.    282.    297.    278.
+         bs    164.    150.    140.    145.    157.    137.
+ max.displ.       0.3084      0.3084      0.3084      0.2874      0.2874      0.2874
+ Type  2 bn    592.    601.    628.    621.    632.    602.
+         bs    320.    302.    290.    299.    320.    296.
+ max.displ.       0.3865      0.3865      0.3865      0.4860      0.4860      0.4860
+ Box            1
+ Type  1 bn    325.    289.    323.    318.    284.    292.
+         bs    325.    289.    323.    318.    284.    292.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      0.      1.      1.      0.      1.
+         bs      1.      0.      1.      1.      0.      1.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    308.    281.    321.    272.    273.    324.
+         bs    157.    158.    156.    149.    153.    162.
+ max.displ.       0.3203      0.3203      0.3203      0.3081      0.3081      0.3081
+ Type  2 bn    622.    613.    608.    628.    586.    571.
+         bs    334.    276.    303.    307.    279.    267.
+ max.displ.       0.3828      0.3828      0.3828      0.4642      0.4642      0.4642
+ Box            1
+ Type  1 bn    297.    303.    308.    302.    321.    309.
+         bs    297.    303.    308.    302.    321.    309.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      0.      0.      0.      0.      2.
+         bs      0.      0.      0.      0.      0.      2.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    285.    315.    284.    296.    319.    285.
+         bs    165.    156.    127.    151.    157.    129.
+ max.displ.       0.3249      0.3249      0.3249      0.2989      0.2989      0.2989
+ Type  2 bn    586.    626.    637.    606.    580.    625.
+         bs    315.    305.    297.    309.    291.    339.
+ max.displ.       0.3805      0.3805      0.3805      0.4809      0.4809      0.4809
+ Box            1
+ Type  1 bn    290.    288.    291.    289.    276.    302.
+         bs    290.    288.    291.    289.    276.    302.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      1.      1.      4.      2.      0.
+         bs      0.      1.      1.      4.      2.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    311.    337.    314.    297.    280.    300.
+         bs    166.    148.    155.    136.    135.    136.
+ max.displ.       0.3176      0.3176      0.3176      0.2776      0.2776      0.2776
+ Type  2 bn    621.    630.    619.    569.    613.    611.
+         bs    334.    299.    292.    279.    325.    314.
+ max.displ.       0.3765      0.3765      0.3765      0.4920      0.4920      0.4920
+ Box            1
+ Type  1 bn    334.    303.    299.    307.    302.    297.
+         bs    334.    303.    299.    307.    302.    297.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      3.      0.      4.      0.      0.      2.
+         bs      3.      0.      4.      0.      0.      2.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    307.    302.    299.    284.    293.    325.
+         bs    184.    155.    145.    145.    152.    172.
+ max.displ.       0.3383      0.3383      0.3383      0.2885      0.2885      0.2885
+ Type  2 bn    609.    648.    629.    639.    593.    618.
+         bs    314.    339.    320.    306.    289.    311.
+ max.displ.       0.3884      0.3884      0.3884      0.4819      0.4819      0.4819
+ Box            1
+ Type  1 bn    307.    270.    325.    306.    309.    271.
+         bs    307.    270.    325.    306.    309.    271.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    318.    296.    317.    307.    303.    292.
+         bs    157.    135.    144.    147.    154.    148.
+ max.displ.       0.3167      0.3167      0.3167      0.2873      0.2873      0.2873
+ Type  2 bn    608.    622.    579.    612.    659.    615.
+         bs    305.    290.    273.    327.    333.    308.
+ max.displ.       0.3727      0.3727      0.3727      0.4949      0.4949      0.4949
+ Box            1
+ Type  1 bn    296.    280.    309.    305.    262.    314.
+         bs    296.    280.    309.    305.    262.    314.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      1.      0.      2.      1.      0.
+         bs      1.      1.      0.      2.      1.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    306.    306.    313.    305.    291.    286.
+         bs    157.    157.    130.    143.    161.    137.
+ max.displ.       0.3043      0.3043      0.3043      0.2875      0.2875      0.2875
+ Type  2 bn    618.    560.    572.    672.    609.    607.
+         bs    340.    296.    267.    325.    321.    304.
+ max.displ.       0.3840      0.3840      0.3840      0.4987      0.4987      0.4987
+ Box            1
+ Type  1 bn    293.    334.    308.    324.    331.    290.
+         bs    293.    334.    308.    324.    331.    290.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      2.      0.      3.      1.      2.
+         bs      2.      2.      0.      3.      1.      2.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    313.    320.    308.    290.    294.    324.
+         bs    184.    168.    151.    138.    150.    158.
+ max.displ.       0.3252      0.3252      0.3252      0.2825      0.2825      0.2825
+ Type  2 bn    581.    628.    634.    645.    596.    605.
+         bs    295.    319.    311.    318.    315.    295.
+ max.displ.       0.3856      0.3856      0.3856      0.5018      0.5018      0.5018
+ Box            1
+ Type  1 bn    319.    295.    298.    325.    311.    271.
+         bs    319.    295.    298.    325.    311.    271.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      0.      1.      0.      4.      2.
+         bs      1.      0.      1.      0.      4.      2.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    303.    311.    294.    306.    284.    308.
+         bs    181.    171.    126.    144.    133.    161.
+ max.displ.       0.3417      0.3417      0.3417      0.2753      0.2753      0.2753
+ Type  2 bn    650.    620.    588.    612.    630.    560.
+         bs    334.    304.    267.    309.    318.    277.
+ max.displ.       0.3749      0.3749      0.3749      0.5032      0.5032      0.5032
+ Box            1
+ Type  1 bn    323.    318.    338.    310.    298.    273.
+         bs    323.    318.    338.    310.    298.    273.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      1.      0.      0.      0.      1.
+         bs      1.      1.      0.      0.      0.      1.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    307.    305.    299.    306.    290.    314.
+         bs    157.    142.    128.    148.    169.    161.
+ max.displ.       0.3200      0.3200      0.3200      0.2898      0.2898      0.2898
+ Type  2 bn    664.    606.    562.    651.    619.    598.
+         bs    381.    292.    271.    297.    290.    289.
+ max.displ.       0.3843      0.3843      0.3843      0.4724      0.4724      0.4724
+ Box            1
+ Type  1 bn    327.    299.    301.    293.    260.    301.
+         bs    327.    299.    301.    293.    260.    301.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      0.      1.      1.      0.      1.
+         bs      0.      0.      1.      1.      0.      1.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    293.    323.    310.    287.    293.    333.
+         bs    162.    150.    161.    141.    130.    159.
+ max.displ.       0.3278      0.3278      0.3278      0.2729      0.2729      0.2729
+ Type  2 bn    635.    607.    618.    614.    625.    611.
+         bs    321.    309.    297.    325.    332.    311.
+ max.displ.       0.3831      0.3831      0.3831      0.4942      0.4942      0.4942
+ Box            1
+ Type  1 bn    280.    301.    269.    322.    299.    293.
+         bs    280.    301.    269.    322.    299.    293.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      2.      0.      0.      1.      0.
+         bs      0.      2.      0.      0.      1.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    327.    315.    292.    281.    331.    319.
+         bs    173.    156.    128.    139.    161.    156.
+ max.displ.       0.3197      0.3197      0.3197      0.2674      0.2674      0.2674
+ Type  2 bn    618.    650.    589.    588.    631.    605.
+         bs    310.    315.    278.    284.    305.    294.
+ max.displ.       0.3724      0.3724      0.3724      0.4785      0.4785      0.4785
+ Box            1
+ Type  1 bn    296.    297.    320.    313.    293.    292.
+         bs    296.    297.    320.    313.    293.    292.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      0.      0.      0.      1.      0.
+         bs      0.      0.      0.      0.      1.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    313.    281.    313.    329.    301.    299.
+         bs    192.    157.    146.    156.    165.    176.
+ max.displ.       0.3492      0.3492      0.3492      0.2872      0.2872      0.2872
+ Type  2 bn    594.    584.    639.    635.    580.    608.
+         bs    336.    294.    324.    305.    286.    289.
+ max.displ.       0.3913      0.3913      0.3913      0.4622      0.4622      0.4622
+ Box            1
+ Type  1 bn    273.    318.    315.    293.    291.    299.
+         bs    273.    318.    315.    293.    291.    299.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      3.      0.      1.      0.      2.      2.
+         bs      3.      0.      1.      0.      2.      2.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    305.    329.    311.    312.    319.    310.
+         bs    169.    175.    131.    166.    162.    169.
+ max.displ.       0.3509      0.3509      0.3509      0.3035      0.3035      0.3035
+ Type  2 bn    627.    619.    598.    584.    594.    644.
+         bs    325.    279.    286.    313.    293.    328.
+ max.displ.       0.3776      0.3776      0.3776      0.4741      0.4741      0.4741
+ volume change:  bn =     0.0   bs =     0.0   max.displ. = 0.10000E+04
+ volume change:  bn =     0.0   bs =     0.0   max.displ. = 0.10000E+04
+ volume change:  bn =   361.0   bs =   141.0   max.displ. = 0.64018E+03
+ Box            1
+ Type  1 bn    296.    266.    272.    343.    289.    296.
+         bs    296.    266.    272.    343.    289.    296.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      3.      2.      0.      1.      0.
+         bs      0.      3.      2.      0.      1.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    301.    317.    307.    286.    328.    309.
+         bs    177.    155.    122.    142.    159.    168.
+ max.displ.       0.3449      0.3449      0.3449      0.3086      0.3086      0.3086
+ Type  2 bn    583.    622.    631.    604.    596.    629.
+         bs    304.    311.    327.    321.    302.    305.
+ max.displ.       0.3876      0.3876      0.3876      0.4813      0.4813      0.4813
+ Box            1
+ Type  1 bn    289.    283.    273.    322.    318.    289.
+         bs    289.    283.    273.    322.    318.    289.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      2.      1.      1.      0.      0.
+         bs      0.      2.      1.      1.      0.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    300.    322.    298.    318.    324.    299.
+         bs    152.    159.    140.    173.    150.    152.
+ max.displ.       0.3381      0.3381      0.3381      0.3117      0.3117      0.3117
+ Type  2 bn    599.    638.    606.    574.    625.    585.
+         bs    297.    327.    287.    277.    340.    303.
+ max.displ.       0.3829      0.3829      0.3829      0.4956      0.4956      0.4956
+ Box            1
+ Type  1 bn    260.    306.    276.    302.    314.    310.
+         bs    260.    306.    276.    302.    314.    310.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      0.      0.      0.      2.      0.
+         bs      1.      0.      0.      0.      2.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    291.    322.    311.    330.    302.    299.
+         bs    170.    145.    134.    164.    148.    136.
+ max.displ.       0.3303      0.3303      0.3303      0.2996      0.2996      0.2996
+ Type  2 bn    627.    674.    625.    534.    643.    590.
+         bs    329.    309.    290.    252.    327.    289.
+ max.displ.       0.3694      0.3694      0.3694      0.4858      0.4858      0.4858
+ Box            1
+ Type  1 bn    318.    304.    306.    324.    341.    323.
+         bs    318.    304.    306.    324.    341.    323.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      5.      1.      2.      2.      0.
+         bs      2.      5.      1.      2.      2.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    307.    307.    326.    312.    295.    259.
+         bs    178.    153.    132.    143.    129.    135.
+ max.displ.       0.3265      0.3265      0.3265      0.2830      0.2830      0.2830
+ Type  2 bn    612.    644.    612.    611.    615.    608.
+         bs    325.    306.    302.    317.    308.    297.
+ max.displ.       0.3693      0.3693      0.3693      0.4885      0.4885      0.4885
+ Box            1
+ Type  1 bn    287.    320.    310.    330.    284.    299.
+         bs    287.    320.    310.    330.    284.    299.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      2.      3.      2.      4.      3.
+         bs      2.      2.      3.      2.      4.      3.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    279.    313.    308.    299.    285.    307.
+         bs    155.    167.    141.    157.    149.    174.
+ max.displ.       0.3368      0.3368      0.3368      0.3047      0.3047      0.3047
+ Type  2 bn    626.    594.    637.    640.    611.    627.
+         bs    341.    296.    302.    301.    284.    326.
+ max.displ.       0.3736      0.3736      0.3736      0.4738      0.4738      0.4738
+ Box            1
+ Type  1 bn    323.    314.    294.    323.    327.    326.
+         bs    323.    314.    294.    323.    327.    326.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      3.      0.      1.      1.      0.      1.
+         bs      3.      0.      1.      1.      0.      1.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    295.    280.    265.    266.    290.    267.
+         bs    168.    154.    110.    124.    128.    136.
+ max.displ.       0.3445      0.3445      0.3445      0.2878      0.2878      0.2878
+ Type  2 bn    646.    601.    590.    613.    588.    645.
+         bs    324.    290.    288.    302.    300.    296.
+ max.displ.       0.3666      0.3666      0.3666      0.4617      0.4617      0.4617
+ Box            1
+ Type  1 bn    356.    320.    334.    346.    305.    347.
+         bs    356.    320.    334.    346.    305.    347.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      1.      1.      0.      0.      1.      0.
+         bs      1.      1.      0.      0.      1.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    274.    266.    279.    290.    284.    279.
+         bs    151.    133.    124.    146.    129.    143.
+ max.displ.       0.3435      0.3435      0.3435      0.2821      0.2821      0.2821
+ Type  2 bn    587.    620.    607.    637.    593.    643.
+         bs    303.    301.    300.    309.    303.    342.
+ max.displ.       0.3656      0.3656      0.3656      0.4703      0.4703      0.4703
+ Box            1
+ Type  1 bn    332.    285.    326.    321.    327.    299.
+         bs    332.    285.    326.    321.    327.    299.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      3.      1.      0.      0.      0.      0.
+         bs      3.      1.      0.      0.      0.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    279.    304.    332.    294.    284.    268.
+         bs    147.    137.    136.    150.    145.    138.
+ max.displ.       0.3177      0.3177      0.3177      0.2888      0.2888      0.2888
+ Type  2 bn    623.    618.    562.    643.    574.    590.
+         bs    325.    305.    280.    289.    290.    300.
+ max.displ.       0.3689      0.3689      0.3689      0.4588      0.4588      0.4588
+ Box            1
+ Type  1 bn    339.    323.    316.    322.    331.    299.
+         bs    339.    323.    316.    322.    331.    299.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      0.      0.      0.      0.      0.      1.
+         bs      0.      0.      0.      0.      0.      1.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    300.    284.    308.    262.    291.    283.
+         bs    176.    152.    139.    125.    135.    136.
+ max.displ.       0.3332      0.3332      0.3332      0.2737      0.2737      0.2737
+ Type  2 bn    603.    583.    630.    558.    608.    623.
+         bs    322.    288.    317.    289.    296.    333.
+ max.displ.       0.3766      0.3766      0.3766      0.4708      0.4708      0.4708
+ Box            1
+ Type  1 bn    313.    317.    322.    333.    336.    315.
+         bs    313.    317.    322.    333.    336.    315.
+ max.displ.     172.2000    172.2000    172.2000      3.1415      3.1415      3.1415
+ Type  2 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Box            2
+ Type  1 bn      0.      0.      0.      0.      0.      0.
+         bs      0.      0.      0.      0.      0.      0.
+ max.displ.       0.3000      0.3000      0.3000      0.4000      0.4000      0.4000
+ Type  2 bn      2.      2.      0.      0.      0.      0.
+         bs      2.      2.      0.      0.      0.      0.
+ max.displ.      96.0000     96.0000     96.0000      3.1415      3.1415      3.1415
+ Box            3
+ Type  1 bn    288.    304.    259.    265.    270.    276.
+         bs    170.    125.    117.    141.    157.    139.
+ max.displ.       0.3228      0.3228      0.3228      0.2951      0.2951      0.2951
+ Type  2 bn    581.    628.    598.    584.    612.    616.
+         bs    303.    290.    293.    288.    305.    317.
+ max.displ.       0.3699      0.3699      0.3699      0.4727      0.4727      0.4727
+ 
+ +++++ end of markov chain +++++
+ 
+ ### Atom Translations ###
+ 
+ x-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.1000E-01
+ x-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.1000E-01
+ x-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.1000E-01
+ 
+ ### Translations ###
+ 
+molecule typ = 1   dioxane     in box           1
+ x-dir: attempts =   15083.0   ratio = 1.000   max.displ. = 0.1722E+03
+ y-dir: attempts =   15005.0   ratio = 1.000   max.displ. = 0.1722E+03
+ z-dir: attempts =   15063.0   ratio = 1.000   max.displ. = 0.1722E+03
+ 
+molecule typ = 2   water       in box           1
+ x-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.3000E+00
+ y-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.3000E+00
+ z-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.3000E+00
+ 
+molecule typ = 1   dioxane     in box           2
+ x-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.3000E+00
+ y-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.3000E+00
+ z-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.3000E+00
+ 
+molecule typ = 2   water       in box           2
+ x-dir: attempts =      70.0   ratio = 1.000   max.displ. = 0.9600E+02
+ y-dir: attempts =      61.0   ratio = 1.000   max.displ. = 0.9600E+02
+ z-dir: attempts =      49.0   ratio = 1.000   max.displ. = 0.9600E+02
+ 
+molecule typ = 1   dioxane     in box           3
+ x-dir: attempts =   15217.0   ratio = 0.551   max.displ. = 0.3228E+00
+ y-dir: attempts =   15390.0   ratio = 0.501   max.displ. = 0.3228E+00
+ z-dir: attempts =   15510.0   ratio = 0.459   max.displ. = 0.3228E+00
+ 
+molecule typ = 2   water       in box           3
+ x-dir: attempts =   30426.0   ratio = 0.532   max.displ. = 0.3699E+00
+ y-dir: attempts =   30681.0   ratio = 0.488   max.displ. = 0.3699E+00
+ z-dir: attempts =   30591.0   ratio = 0.473   max.displ. = 0.3699E+00
+ 
+ ### Rotations ###
+ 
+molecule typ = 1   dioxane     in box           1
+ x-dir: attempts =   15199.0   ratio = 1.000   max.displ. = 0.3142E+01
+ y-dir: attempts =   14884.0   ratio = 1.000   max.displ. = 0.3142E+01
+ z-dir: attempts =   14932.0   ratio = 1.000   max.displ. = 0.3142E+01
+ 
+molecule typ = 2   water       in box           1
+ x-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.4000E+00
+ y-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.4000E+00
+ z-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.4000E+00
+ 
+molecule typ = 1   dioxane     in box           2
+ x-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.4000E+00
+ y-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.4000E+00
+ z-dir: attempts =       0.0   ratio = 0.000   max.displ. = 0.4000E+00
+ 
+molecule typ = 2   water       in box           2
+ x-dir: attempts =      59.0   ratio = 1.000   max.displ. = 0.3142E+01
+ y-dir: attempts =      64.0   ratio = 1.000   max.displ. = 0.3142E+01
+ z-dir: attempts =      67.0   ratio = 1.000   max.displ. = 0.3142E+01
+ 
+molecule typ = 1   dioxane     in box           3
+ x-dir: attempts =   15033.0   ratio = 0.503   max.displ. = 0.2951E+00
+ y-dir: attempts =   15166.0   ratio = 0.497   max.displ. = 0.2951E+00
+ z-dir: attempts =   15199.0   ratio = 0.510   max.displ. = 0.2951E+00
+ 
+molecule typ = 2   water       in box           3
+ x-dir: attempts =   30599.0   ratio = 0.489   max.displ. = 0.4727E+00
+ y-dir: attempts =   30386.0   ratio = 0.505   max.displ. = 0.4727E+00
+ z-dir: attempts =   30205.0   ratio = 0.501   max.displ. = 0.4727E+00
+ 
+ 
+ ### Configurational-bias ###
+ 
+molecule typ = 1    dioxane    in box 1
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+  SAFE-CBMC move 
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+        1   91308.0   91308.0   87181.0    100.00     95.48
+molecule typ = 1    dioxane    in box 2
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+  SAFE-CBMC move 
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+molecule typ = 1    dioxane    in box 3
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+  SAFE-CBMC move 
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+        1   92620.0   92201.0   47562.0     99.55     51.35
+molecule typ = 2    water      in box 1
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+molecule typ = 2    water      in box 2
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+molecule typ = 2    water      in box 3
+     length  attempts  succ.growth  accepted   %su.gr.    %accep.
+ 
+ 
+ ### Volume change       ###
+ attempts =     0.0   ratio = 0.000max.displ. = 0.1000E+04   avg.acc.displ. = 0.0000E+00
+ attempts =     0.0   ratio = 0.000max.displ. = 0.1000E+04   avg.acc.displ. = 0.0000E+00
+ attempts =   898.0   ratio = 0.340max.displ. = 0.6402E+03   avg.acc.displ. = 0.2008E+03
+
+### Molecule swap       ###
+
+molecule typ = 1   dioxane   
+between box 1 and 3 into box 1   uattempts = 164038 attempts = 164038   accepted = 18
+ suc.growth % =100.000   accepted % =  0.011
+between box 1 and 3 into box 3   uattempts = 164913 attempts = 164913   accepted = 4
+ suc.growth % =  2.832   accepted % =  0.002
+number of times move in: 0  accepted = 0
+number of times move out: 0  accepted = 0
+molecule typ = 2   water     
+between box 2 and 3 into box 2   uattempts = 18179 attempts = 18179   accepted = 153
+ suc.growth % =100.000   accepted % =  0.842
+between box 2 and 3 into box 3   uattempts = 18105 attempts = 17803   accepted = 153
+ suc.growth % = 99.708   accepted % =  0.845
+number of times move in: 0  accepted = 0
+number of times move out: 0  accepted = 0
+
+### Molecule swatch     ###
+
+ 
+ ### Charge Fluctuation  ###
+ 
+ 
+ ### Expanded Ensemble Move  ###
+ 
+
+New Biasing Potential
+
+molecule  1:   0.00000000      0.00000000      0.00000000    
+molecule  2:   0.00000000      0.00000000      0.00000000     
+ 
+ sumup control
+ number of chains          16
+number of chains of type    1 dioxane         16
+number of chains of type    2 water            0
+ inter lj energy   0.000000000000000E+000
+ intra lj energy   0.000000000000000E+000
+ Tail correction   0.000000000000000E+000
+ bond vibration    0.000000000000000E+000
+ bond bending       10313.8792443532     
+ torsional          7677.09582245268     
+ external          0.000000000000000E+000
+ coulombic energy  0.000000000000000E+000
+ fluc Q energy     0.000000000000000E+000
+ well energy       0.000000000000000E+000
+ total energy       17990.9750668059     
+ 
+ sumup control
+ number of chains           2
+number of chains of type    1 dioxane          0
+number of chains of type    2 water            2
+ inter lj energy   0.000000000000000E+000
+ intra lj energy   0.000000000000000E+000
+ Tail correction   0.000000000000000E+000
+ bond vibration    0.000000000000000E+000
+ bond bending      0.000000000000000E+000
+ torsional         0.000000000000000E+000
+ external          0.000000000000000E+000
+ coulombic energy  0.000000000000000E+000
+ fluc Q energy     0.000000000000000E+000
+ well energy       0.000000000000000E+000
+ total energy      0.000000000000000E+000
+ 
+ sumup control
+ number of chains        1812
+number of chains of type    1 dioxane         14
+number of chains of type    2 water         1798
+ inter lj energy    1156674.09489636     
+ intra lj energy   0.000000000000000E+000
+ Tail correction   -14493.2841617161     
+ bond vibration    0.000000000000000E+000
+ bond bending       7931.48365791014     
+ torsional          6794.12313871551     
+ external          0.000000000000000E+000
+ coulombic energy  -9231075.53363615     
+ fluc Q energy     0.000000000000000E+000
+ well energy       0.000000000000000E+000
+ total energy      -8059675.83194316     
+ 
+ vstart       =         2054.7277003912            0.0000000000     -6639594.1667497708
+ vend         =        17990.9750668059            0.0000000000     -8059675.8319431618
+ vbox         =        17990.9750667298            0.0000000000     -8059675.8319440400
+ 
+ Averages and fluctuations                                  Box  1       Box  2       Box  3
+ 
+ pressure                                      [kPa] =         2.62         3.67     -2507.60
+ pressure                         [simulation units] =     0.000190     0.000266    -0.181625
+ surface tension                              [mN/m] =       0.0000       0.0000     399.4969
+ compress factor                                     =      1.00000      1.00000     -0.02073
+ chem. potential of type   1 dioxane             [K] =    -6274.580        0.000    -5200.863
+ chem. potential of type   2 water               [K] =        0.000    -5466.140    -6005.586
+ boxlength                                       [A] =      287.000      160.000       39.235
+ boxlength                                       [A] =      287.000      160.000       39.235
+ boxlength                                       [A] =      287.000      160.000       39.235
+ no. of chains of type     1 dioxane                 =       14.901        0.000       15.099
+ no. of chains of type     2 water                   =        0.000        3.649     1796.351
+ molar volume                             [cm^3/mol] =   955399.143   676022.202       20.071
+ specific density                           [g/cm^3] =     0.000092     0.000027     0.926632
+ number density of type    1 dioxane    [chain/nm^3] =      0.00063      0.00000      0.24981
+ number density of type    2 water      [chain/nm^3] =      0.00000      0.00089     29.75452
+ molfraction of type       1 dioxane                 =    1.0000000    0.0000000    0.0083350
+ molfraction of type       2 water                   =    0.0000000    1.0000000    0.9916650
+ mean sete length of type  1 dioxane           [A^2] =        1.988        0.000        1.988
+ mean sete length of type  2 water             [A^2] =        0.000        0.022        0.023
+ 
+ Total energy [K per system and kJ/mol per chain] =      15952.65          0.00   -7559408.51       8.89        NaN     -34.70
+ Inter LJ     [K per system and kJ/mol per chain] =          0.00          0.00    1012433.95       0.00        NaN       4.65
+ Tail  LJ     [K per system and kJ/mol per chain] =          0.00          0.00     -14216.63       0.00        NaN      -0.07
+ Intra LJ     [K per system and kJ/mol per chain] =          0.00          0.00          0.00       0.00        NaN       0.00
+ Stretch      [K per system and kJ/mol per chain] =          0.00          0.00          0.00       0.00        NaN       0.00
+ Bond bending [K per system and kJ/mol per chain] =      10486.50          0.00      11022.35       5.85        NaN       0.05
+ Torsion      [K per system and kJ/mol per chain] =       5466.14          0.00      10153.73       3.04        NaN       0.05
+ Coulomb      [K per system and kJ/mol per chain] =          0.00          0.00   -8593018.53       0.00        NaN     -39.44
+ External pot [K per system and kJ/mol per chain] =          0.00          0.00          0.00       0.00        NaN       0.00
+ 3-body Garo  [K per system and kJ/mol per chain] =          0.00          0.00          0.00       0.00        NaN       0.00
+ Fluc Q       [K per system and kJ/mol per chain] =          0.00          0.00          0.00       0.00        NaN       0.00
+ 
+ fluctuation in <vtot> =     2615.22        0.00   393134.52
+ 
+ type  box       vinter       vintra         vtor        vbend        vtail
+    1    1      0.00000      0.00000      0.00000      0.00000      0.00000
+    1    2      0.00000      0.00000      0.00000      0.00000      0.00000
+    1    3      0.00000      0.00000      0.00000      0.00000      0.00000
+    2    1      0.00000      0.00000      0.00000      0.00000      0.00000
+    2    2      0.00000      0.00000      0.00000      0.00000      0.00000
+    2    3      0.00000      0.00000      0.00000      0.00000      0.00000
+ Program ended at 2024-06-25 15:16:34.829
